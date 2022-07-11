@@ -22,7 +22,8 @@ namespace FileInteraction
             this.name = name;
             this.height = height;
             this.weight = weight;
-        }
+        }ls
+        
 
         // methods
 
