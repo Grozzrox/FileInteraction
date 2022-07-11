@@ -17,7 +17,7 @@ namespace FileInteraction
 
         // constructor
 
-        public Person(string name, double height, double weight)
+        public Person(string? name, double? height, double? weight)
         {
             this.name = name;
             this.height = height;
