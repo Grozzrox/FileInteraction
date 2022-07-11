@@ -14,17 +14,24 @@ namespace FileInteraction
             string[] secondText = {"This is the appended text in the secondText array"};
             string path = @"./TextFile.txt";
 
-            Console.WriteLine("Please select an option:");
-            Console.WriteLine("1: Read from file.");
-            Console.WriteLine("2: Write to file.");
-            Console.WriteLine("0: Exit.");
+            // use serialization to write to file
+            Person p = new Person("James", 12.34, 55.5);
 
-            string choice = Console.ReadLine();
+            // read the object from a file
+            Console.WriteLine(p.SerializeAsXml());
+
 
             bool loop = true;
-
             while (loop)
             {
+                Console.WriteLine("Please select an option:");
+                Console.WriteLine("1: Read from file.");
+                Console.WriteLine("2: Write to file.");
+                Console.WriteLine("3: Create Xml Record");
+                Console.WriteLine("0: Exit.");
+
+                string ? choice = Console.ReadLine(); // the ? makes it nullable
+
                 switch(choice)
                     {
                         case "1": // if (choice == "1")
@@ -55,6 +62,10 @@ namespace FileInteraction
                             {
                                 File.AppendAllLines(path, secondText);
                             }
+                            break;
+
+                        case "3":
+                            Console.WriteLine(p.SerializeAsXml());
                             break;
 
                         case "0":
